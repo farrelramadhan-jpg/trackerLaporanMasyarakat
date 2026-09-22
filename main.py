@@ -23,8 +23,8 @@ def computeHash(block):
 
 laporan1 = laporanBlock(1, 'LAPORAN_BARU', 'Jalan Rusak di jalan maleo', 'Warga01')
 
-laporan2 = laporanBlock(2, 'UPDATE_STATUS', 'Status: diproses', 'DinasPU', parentId=laporan1.id)
-laporan3 = laporanBlock(3, 'TANGGAPAN_RESMI', 'Perbaikan dijadwalkan minggu depan', 'DinasPU', parentId=laporan2.id)
+laporan2 = laporanBlock(2, 'UPDATE_STATUS', 'Status: diproses', 'Diskominfo', parentId=laporan1.id)
+laporan3 = laporanBlock(3, 'TANGGAPAN_RESMI', 'Perbaikan dijadwalkan minggu depan', 'Diskominfo', parentId=laporan2.id)
 
 laporan2.parentHash = computeHash(laporan1)
 laporan3.parentHash = computeHash(laporan2)
@@ -72,7 +72,7 @@ def verifyBlock(block, publicKey):
 
 
 validatorTerdaftar = {
-    'DinasPU': publicKeyDinasPU,
+    'Diskominfo': publicKeyDinasPU,
 }
 
 def validasiBlockBaru(block, chainBlocks):
